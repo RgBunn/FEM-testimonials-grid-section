@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  /* ### Primary */
+
+  --moderate-violet: hsl(263, 55%, 52%);
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+
+  /* ### Neutral */
+
+  --light-gray: hsl(0, 0%, 81%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+}
+body {
+  font-family: "Barlow Semi Condensed", serif;
+  font-size: 0.813rem;
+  background-color: var(--light-grayish-blue);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  line-height: 1.5;
+}
+h2 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+/* Card styles */
+.testimonial-card {
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px var(--light-gray);
+}
+.author {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.authors-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.authors-image img {
+  border-radius: 50%;
+  height: 30px;
+}
+.authors-name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.authors-title {
+  opacity: 0.5;
+}
+blockquote {
+  opacity: 0.7;
+}
+.card-one,
+.card-two,
+.card-four {
+  color: var(--light-grayish-blue);
+}
+.card-three,
+.card-five {
+  color: var(--very-dark-grayish-blue);
+}
+.wrapper {
+  max-width: 325px;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Grid  */
+
+.card-one {
+  background-color: var(--moderate-violet);
+  background-image: url(images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: right 10% top 0%;
+  grid-area: box-one;
+}
+.card-two {
+  background-color: var(--very-dark-grayish-blue);
+  grid-area: box-two;
+}
+.card-three {
+  background-color: var(--white);
+  grid-area: box-three;
+}
+.card-four {
+  background-color: var(--very-dark-blackish-blue);
+  grid-area: box-four;
+}
+.card-five {
+  background-color: var(--white);
+  grid-area: box-five;
+}
+/* media queries */
+@media screen and (min-width: 768px) {
+  .wrapper {
+    display: grid;
+    max-width: 1000px;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    /* grid-template-rows: auto; */
+    grid-template-areas: "box-one box-one box-two box-five" "box-three box-four box-four box-five";
+  }
+}
